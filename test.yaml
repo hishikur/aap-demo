@@ -17,6 +17,6 @@
 
   - name: copy web.html
     copy:
-      src: web.html
+      src: /root/web.html
       dest: /var/www/html/index.html
 
