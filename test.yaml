@@ -19,6 +19,11 @@
   - name: debug
     command:
       /bin/pwd
+    register: mymotd
+
+  - name: debug2
+    debug:
+      msg: "{{ mymotd }}"
       
 
   - name: copy web.html
