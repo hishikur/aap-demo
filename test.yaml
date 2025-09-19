@@ -1,17 +1,19 @@
 ---
 - name: Apache server installed
-  hosts: web
   become: yes
+
   tasks:
   - name: latest Apache version installed
-    yum:
+    dnf:
       name: httpd
       state: latest
+
   - name: Apache enabled and running
     service:
       name: httpd
       enabled: true
       state: started
+
   - name: copy web.html
     copy:
       src: web.html
