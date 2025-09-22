@@ -1,6 +1,6 @@
 ---
 - name: check url
-  hosts: localhost
+  hosts: bastion
   become: yes
 
   tasks:
