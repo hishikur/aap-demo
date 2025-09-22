@@ -26,8 +26,8 @@
       msg: "{{ mymotd }}"
       
 
-  - name: copy web.html
+  - name: copy index.html
     copy:
-      src: ./files/web.html
+      src: ./files/index.html
       dest: /var/www/html/index.html
 
