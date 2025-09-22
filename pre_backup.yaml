@@ -1,11 +1,11 @@
 ---
 - name: Create snapshot of an EC2 volume
-  hosts: rhel1
+  hosts: localhost
   collections:
     - amazon.aws
-#  vars:
-#    region: ap-southeast-2
-#    volume_id: vol-06c37b30d2ac78204
+  vars:
+    region: ap-southeast-2
+    volume_id: vol-06c37b30d2ac78204
 
   tasks:
     - name: Create a snapshot
