@@ -4,6 +4,12 @@
   become: yes
 
   tasks:
+  - name: stop Apache service
+    service:
+      name: httpd
+      enabled: false
+      state: stopped
+
   - name: remove Apache
     dnf:
       name: httpd
