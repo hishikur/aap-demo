@@ -4,7 +4,7 @@
   collections:
     - amazon.aws
   vars:
-    region: ap-sourtheast-2
+    region: ap-southeast-2
     volume_id: vol-06c37b30d2ac78204
 
   tasks:
