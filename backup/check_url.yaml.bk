@@ -13,3 +13,13 @@
   - name: rhel1 output
     debug:
       msg: "{{ rhel1_out.content }}"
+
+  - name: rhel2 check
+    uri:
+      url: http://rhel2
+      return_content: true
+    register: rhel2_out
+
+  - name: rhel2 output
+    debug:
+      msg: "{{ rhel2_out.content }}"

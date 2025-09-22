@@ -20,9 +20,3 @@
       src: ./templates/index.html
       dest: /var/www/html/index.html
 
-
-#  - name: copy web.html
-#    copy:
-#      src: ./files/web.html
-#      dest: /var/www/html/index.html
-
