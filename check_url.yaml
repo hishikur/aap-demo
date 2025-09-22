@@ -7,12 +7,12 @@
   - name: rhel1 check
     uri:
       url: http://rhel1
-#      return_content: true
+      return_content: true
     register: rhel1_out
 
   - name: rhel1 output
     debug:
-      msg: "{{ rhel1_out }}"
+      msg: "{{ rhel1_out.content }}"
 
   - name: rhel2 check
     uri:
