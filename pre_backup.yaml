@@ -1,0 +1,20 @@
+---
+- name: Create snapshot of an EC2 volume
+  hosts: localhost
+  collections:
+    - amazon.aws
+  vars:
+    region: ap-sourtheast-2
+    volume_id: vol-0123456789abcdef0
+
+  tasks:
+    - name: Create a snapshot
+      ec2_snapshot:
+        region: "{{ region }}"
+        volume_id: "{{ volume_id }}"
+        description: "Snapshot created by Ansible"
+      register: snapshot_result
+
+    - name: Show snapshot ID
+      debug:
+        var: snapshot_result.snapshot_id
