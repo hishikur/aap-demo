@@ -27,7 +27,7 @@
 
   - name: copy index.html
     template:
-      src: ./templates/web.html
+      src: ./templates/index.html
       dest: /var/www/html/index.html
 
 
