@@ -1,0 +1,25 @@
+---
+- name: check url
+  hosts: localhost
+  become: yes
+
+  tasks:
+  - name: rhel1 check
+    uri:
+      url: https://rhel1
+      return_content: true
+    register: rhel1_out
+
+  - name: rhel1 output
+    debug:
+      msg: "{{ rhel1_out }}"
+
+  - name: rhel2 check
+    uri:
+      url: https://rhel2
+      return_content: true
+    register: rhel2_out
+
+  - name: rhel2 output
+    debug:
+      msg: "{{ rhel2_out }}"

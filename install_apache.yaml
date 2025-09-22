@@ -15,16 +15,6 @@
       enabled: true
       state: started
 
-
-  - name: debug
-    command:
-      /bin/pwd
-    register: mymotd
-
-  - name: debug2
-    debug:
-      msg: "{{ mymotd }}"
-
   - name: copy index.html
     template:
       src: ./templates/index.html
