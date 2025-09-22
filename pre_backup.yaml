@@ -11,10 +11,18 @@
     - name: Create a snapshot
       ec2_snapshot:
         region: "{{ region }}"
-        volume_id: "{{ volume_id }}"
+        instance_id: i-0c3bd154301d0948e
         description: "Snapshot created by Ansible"
       register: snapshot_result
 
     - name: Show snapshot ID
       debug:
         var: snapshot_result.snapshot_id
+
+
+#    - name: Create a snapshot
+#      ec2_snapshot:
+#        region: "{{ region }}"
+#        instance_id: "{{ volume_id }}"
+#        description: "Snapshot created by Ansible"
+#      register: snapshot_result
