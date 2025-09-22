@@ -1,6 +1,6 @@
 ---
 - name: Create snapshot of an EC2 volume
-  hosts: localhost
+  hosts: rhel1
   collections:
     - amazon.aws
 #  vars:
