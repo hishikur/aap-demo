@@ -1,0 +1,38 @@
+---
+- name: Apache server installed
+  hosts: rhel1
+  become: yes
+
+  tasks:
+  - name: latest Apache version installed
+    dnf:
+      name: httpd
+      state: latest
+
+  - name: Apache enabled and running
+    service:
+      name: httpd
+      enabled: true
+      state: started
+
+
+  - name: debug
+    command:
+      /bin/pwd
+    register: mymotd
+
+  - name: debug2
+    debug:
+      msg: "{{ mymotd }}"
+
+  - name: copy index.html
+    template:
+      src: ./templates/web.html
+      dest: /var/www/html/index.html
+
+
+#  - name: copy web.html
+#    copy:
+#      src: ./files/web.html
+#      dest: /var/www/html/index.html
+
