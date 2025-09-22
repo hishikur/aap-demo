@@ -10,8 +10,7 @@
   tasks:
     - name: Create a snapshot
       ec2_snapshot:
-        region: "{{ region }}"
-        instance_id: "{{ volume_id }}"
+        volume_id: "{{ volume_id }}"
         description: "Snapshot created by Ansible"
       register: snapshot_result
 
