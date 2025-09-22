@@ -28,6 +28,6 @@
 
   - name: copy web.html
     copy:
-      src: /root/web.html
+      src: ./files/web.html
       dest: /var/www/html/index.html
 
