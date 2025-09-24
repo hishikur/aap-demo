@@ -11,7 +11,7 @@
   tasks:
     - name: Create a snapshot
       ec2_snapshot:
-        volume_id: "{{ host_lists[target_host].volume_id }}"
+        volume_id: "{{ volume_id }}"
         region: "{{ region }}"
         description: "Snapshot created by Ansible"
       register: snapshot_result
