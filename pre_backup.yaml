@@ -14,10 +14,6 @@
         volume_id: "{{ volume_id }}"
         region: "{{ region }}"
         description: "Snapshot created by Ansible"
-        wait: yes
-        snapshot_tags:
-          Name: "Backup-{{ instance_id }}-{{ lookup('pipe','date +%Y%m%d') }}-pre"
-          InstanceId: "{{ instance_id }}"
       register: snapshot_result
 
     - name: Show snapshot ID
