@@ -14,8 +14,8 @@
   tasks:
     - name: Show dynamic host_vars safely
       debug:
-        msg:  "{{ target_host }} is target.  {{ host_lists[target_host].volume_id }}"
-       
+        msg:  "{{ target_host }} is target."
+       #  {{ host_lists[target_host].volume_id }}
 #    - name: Show dynamic host_vars
 #      debug:
 #        msg: "Target DB host is {{ host_lists[target_host].volume_id }}"
