@@ -16,17 +16,15 @@
     - name: Show dynamic host_vars safely
       debug:
         msg:  "{{ target_host }} is target. {{ host_lists[target_host].volume_id }}"
-#        msg:  "{{ target_host }} is target. {{ host_lists[target_host].volume_id }}"
+#        msg:  "{{ target_host }} is target."
 #    - name: Show dynamic host_vars
 #      debug:
 #        msg: "Target DB host is {{ host_lists[target_host].volume_id }}"
 
     - name: Create a snapshot
       ec2_snapshot:
-#        volume_id {{ hostvars[host-name]['volume_id'] }}
         volume_id: "{{ host_lists[target_host].volume_id }}"
         region: "{{ region }}"
-#        region {{ hostvars[host-name]['region'] }}
         description: "Snapshot created by Ansible"
       register: snapshot_result
 
