@@ -11,6 +11,8 @@
     host_lists:
       rhel1:
         volume_id: vol-06c37b30d2ac78204
+      rhel2:
+        volume_id: vol-084f64e04b644513e
 
   tasks:
     - name: Show dynamic host_vars safely
