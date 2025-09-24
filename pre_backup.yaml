@@ -1,23 +1,23 @@
 ---
 - name: Create snapshot of an EC2 volume
-  hosts: localhost
+  hosts: rhel1
   collections:
     - amazon.aws
-#  vars:
-#    region: ap-southeast-2
-#    volume_id: vol-06c37b30d2ac78204
-#    instance_id: i-0c3bd154301d0948e
+  vars:
+    region: ap-southeast-2
+    volume_id: vol-06c37b30d2ac78204
+    instance_id: i-0c3bd154301d0948e
 
   tasks:
-    - name: Show dynamic host_vars
-      debug:
-        msg: "Target DB host is {{ hostvars[target_host]['volume_id'] }}"
+#    - name: Show dynamic host_vars
+#      debug:
+#        msg: "Target DB host is {{ hostvars[target_host]['volume_id'] }}"
 
     - name: Create a snapshot
       ec2_snapshot:
 #        volume_id {{ hostvars[host-name]['volume_id'] }}
-#        volume_id: "{{ volume_id }}"
-#        region: "{{ region }}"
+        volume_id: "{{ volume_id }}"
+        region: "{{ region }}"
 #        region {{ hostvars[host-name]['region'] }}
         description: "Snapshot created by Ansible"
       register: snapshot_result
