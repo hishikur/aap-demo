@@ -9,12 +9,16 @@
 #    instance_id: i-0c3bd154301d0948e
 
   tasks:
+    - name: Show dynamic host_vars
+      debug:
+        msg: "Target DB host is {{ hostvars[host-name]['volume_id'] }}"
+
     - name: Create a snapshot
       ec2_snapshot:
-        volume_id {{ hostvars[host-name]['volume_id'] }}
+#        volume_id {{ hostvars[host-name]['volume_id'] }}
 #        volume_id: "{{ volume_id }}"
 #        region: "{{ region }}"
-        region {{ hostvars[host-name]['region'] }}
+#        region {{ hostvars[host-name]['region'] }}
         description: "Snapshot created by Ansible"
       register: snapshot_result
 
