@@ -7,8 +7,9 @@
     region: ap-southeast-2
 #    volume_id: vol-06c37b30d2ac78204
 #    instance_id: i-0c3bd154301d0948e
-    target_host:
-      volume_id: vol-06c37b30d2ac78204
+    host_lists:
+      rhel1:
+        volume_id: vol-06c37b30d2ac78204
 
   tasks:
 #    - name: Show dynamic host_vars
@@ -18,7 +19,7 @@
     - name: Create a snapshot
       ec2_snapshot:
 #        volume_id {{ hostvars[host-name]['volume_id'] }}
-        volume_id: "{{ target_host.volume_id }}"
+        volume_id: "{{ host_lists.[target_host].volume_id }}"
         region: "{{ region }}"
 #        region {{ hostvars[host-name]['region'] }}
         description: "Snapshot created by Ansible"
