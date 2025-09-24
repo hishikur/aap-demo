@@ -11,7 +11,7 @@
   tasks:
     - name: Show dynamic host_vars
       debug:
-        msg: "Target DB host is {{ hostvars[host-name]['volume_id'] }}"
+        msg: "Target DB host is {{ hostvars[target_host]['volume_id'] }}"
 
     - name: Create a snapshot
       ec2_snapshot:
