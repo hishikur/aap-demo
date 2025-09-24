@@ -13,7 +13,8 @@
       ec2_snapshot:
         volume_id {{ hostvars[host-name]['volume_id'] }}
 #        volume_id: "{{ volume_id }}"
-        region: "{{ region }}"
+#        region: "{{ region }}"
+        region {{ hostvars[host-name]['region'] }}
         description: "Snapshot created by Ansible"
       register: snapshot_result
 
